@@ -2,9 +2,9 @@
 
 import dynamic from 'next/dynamic'
 
-// Dynamically import the weekly page component to prevent SSR issues
-const WeeklyPageContent = dynamic(
-  () => import('@/components/pages/WeeklyPageContent'),
+// Dynamically import to prevent SSR issues with Zustand store
+const WeeklyContent = dynamic(
+  () => import('./weekly-content'),
   { 
     ssr: false,
     loading: () => (
@@ -16,5 +16,5 @@ const WeeklyPageContent = dynamic(
 )
 
 export default function WeeklyPage() {
-  return <WeeklyPageContent />
+  return <WeeklyContent />
 }
