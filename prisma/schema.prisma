@@ -1,0 +1,162 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Intention {
+  id             String    @id @default(cuid())
+  name           String
+  description    String
+  color          String
+  status         String    @default("active") // active, paused, completed
+  progress       Int       @default(0)
+  totalTasks     Int       @default(0)
+  completedTasks Int       @default(0)
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+  
+  projects       Project[]
+  tasks          Task[]
+  
+  @@map("intentions")
+}
+
+model Project {
+  id          String    @id @default(cuid())
+  name        String
+  description String
+  intentionId String
+  why         String
+  color       String
+  repoUrl     String?
+  status      String    @default("active") // active, paused, completed
+  progress    Int       @default(0)
+  dueDate     DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  
+  intention   Intention @relation(fields: [intentionId], references: [id], onDelete: Cascade)
+  tasks       Task[]
+  sessions    Session[]
+  timeline    TimelineEvent[]
+  
+  @@map("projects")
+}
+
+model Task {
+  id            String    @id @default(cuid())
+  title         String
+  description   String?
+  status        String    @default("pending") // pending, in_progress, completed
+  priority      String    @default("medium") // low, medium, high
+  projectId     String?
+  intentionId   String?
+  estimatedTime Int?      // minutes
+  actualTime    Int?      // minutes
+  energy        String?   // low, medium, high
+  why           String?
+  tinySteps     String?   // JSON array
+  dueDate       DateTime?
+  tags          String?   // JSON array
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  completedAt   DateTime?
+  
+  project       Project?  @relation(fields: [projectId], references: [id], onDelete: SetNull)
+  intention     Intention? @relation(fields: [intentionId], references: [id], onDelete: SetNull)
+  sessions      Session[]
+  timeline      TimelineEvent[]
+  
+  @@map("tasks")
+}
+
+model Session {
+  id             String    @id @default(cuid())
+  taskId         String
+  projectId      String?
+  type           String    // focus, break
+  duration       Int       // planned minutes
+  actualDuration Int?      // actual minutes
+  energy         String    @default("medium") // low, medium, high
+  notes          String?
+  obstacles      String?   // JSON array
+  startedAt      DateTime  @default(now())
+  endedAt        DateTime?
+  isActive       Boolean   @default(true)
+  
+  task           Task      @relation(fields: [taskId], references: [id], onDelete: Cascade)
+  project        Project?  @relation(fields: [projectId], references: [id], onDelete: SetNull)
+  commits        Commit[]
+  timeline       TimelineEvent[]
+  
+  @@map("sessions")
+}
+
+model Commit {
+  id          String   @id @default(cuid())
+  sessionId   String
+  sha         String
+  message     String
+  files       Int
+  additions   Int
+  deletions   Int
+  timestamp   DateTime @default(now())
+  
+  session     Session  @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  
+  @@map("commits")
+}
+
+model Obstacle {
+  id          String   @id @default(cuid())
+  name        String
+  description String?
+  strategy    String
+  color       String
+  category    String
+  usageCount  Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  @@map("obstacles")
+}
+
+model TimelineEvent {
+  id          String   @id @default(cuid())
+  type        String   // task_completed, focus_session, commit, goal_achieved
+  title       String
+  description String
+  projectId   String?
+  sessionId   String?
+  taskId      String?
+  metadata    String?  // JSON
+  timestamp   DateTime @default(now())
+  
+  project     Project? @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  session     Session? @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  task        Task?    @relation(fields: [taskId], references: [id], onDelete: Cascade)
+  
+  @@map("timeline_events")
+}
+
+model UserSettings {
+  id                     String  @id @default("default")
+  theme                  String  @default("dark")
+  focusSessionDuration   Int     @default(25) // minutes
+  breakDuration          Int     @default(5)  // minutes
+  dailyGoal              Int     @default(5)  // tasks
+  weeklyGoal             Int     @default(25) // hours
+  notifications          String  @default("{}") // JSON
+  shortcuts              String  @default("{}") // JSON
+  createdAt              DateTime @default(now())
+  updatedAt              DateTime @updatedAt
+  
+  @@map("user_settings")
+}
