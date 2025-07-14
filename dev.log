@@ -83,3 +83,10 @@ Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
  ⚠ Unsupported metadata themeColor is configured in metadata export in /universe. Please move it to viewport export instead.
 Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
  GET /universe 200 in 39ms
+   Reload env: .env.local
+ ✓ Compiled in 2.1s (1814 modules)
+ ✓ Compiled in 155ms (850 modules)
+ ✓ Compiled in 80ms (850 modules)
+   Reload env: .env.local
+ ✓ Compiled in 210ms (1782 modules)
+[?25h
