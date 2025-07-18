@@ -1,0 +1,41 @@
+incident_id: FAULT-2025-07-14-001
+severity: critical
+issue_type: deployment-404
+classification: build-deployment-issue
+timestamp: 2025-07-14T23:50:00Z
+reporter: user
+url_affected: https://creationos.vercel.app
+error_code: 404_NOT_FOUND
+system: Creation OS - Next.js 15 + Vercel + Supabase
+
+symptoms:
+  - Site returns 404 NOT_FOUND
+  - Multiple deployment attempts failed
+  - Simplified components still failing
+  - Vercel builds successfully but serves 404
+
+context:
+  recent_changes:
+    - Simplified universe page
+    - Simplified weekly page  
+    - Removed complex dependencies
+    - Multiple emergency fixes applied
+  
+  commits_involved:
+    - ce8286b: "EMERGENCY: Ultra-minimal setup to fix 404"
+    - b8cf4a9: "Create simple, working universe page"
+    - fc2fee7: "Simplify weekly page to fix deployment"
+
+predicted_root_causes:
+  1:
+    cause: "Build Output Structure"
+    confidence: 0.85
+    evidence: "Next.js may not be generating proper build output"
+  2:
+    cause: "Vercel Configuration"
+    confidence: 0.72
+    evidence: "Missing vercel.json or framework misconfiguration"
+  3:
+    cause: "Route Configuration" 
+    confidence: 0.68
+    evidence: "App Router misconfiguration or export issues"

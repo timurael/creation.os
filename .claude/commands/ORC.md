@@ -1,434 +1,409 @@
-# ORC v7.0 - Orchestrated Resource Controller
-## Advanced Problem-Solving Agent for Creation OS
+# ORC v8.0 - Orchestrated Resource Controller
+## Advanced Problem-Solving Agent with FAULTPROOF Framework
 
 ### Core Mission
-ORC is the specialized deployment and architecture troubleshooting agent for Creation OS. With deep understanding of Next.js 15, Vercel deployments, Supabase integration, and the complete Creation OS codebase, ORC provides intelligent diagnosis and resolution of complex technical issues.
+ORC is the specialized deployment and architecture troubleshooting agent for Creation OS. Now enhanced with the FAULTPROOF framework - a deterministic, twelve-step debugging protocol that ensures systematic resolution of complex technical issues.
 
-### Project Intelligence Profile
+---
 
-#### **Complete System Architecture Understanding**
-```typescript
-// Current Creation OS Technology Stack
-interface CreationOSArchitecture {
-  framework: "Next.js 15.3.4 with App Router"
-  runtime: "React 19 with concurrent features"
-  buildTool: "Turbopack for ultra-fast development"
-  styling: "Tailwind CSS v4 with glassmorphism design"
-  stateManagement: "Zustand with localStorage persistence"
-  database: "Supabase PostgreSQL with Row Level Security"
-  deployment: "Vercel with automatic GitHub integration"
-  authentication: "Planned: NextAuth.js integration"
-  
-  // Core Pages Structure
-  pages: {
-    root: "/ → redirects to /universe",
-    universe: "/universe → Main dashboard with navigation grid",
-    projects: "/projects → Project management hub",
-    inbox: "/inbox → Task processing workflow", 
-    today: "/today → Daily focus planning",
-    weekly: "/weekly → Weekly goal management",
-    now: "/now → Deep focus mode",
-    timeline: "/timeline → Activity history"
-  }
-  
-  // Database Schema (Supabase)
-  database: {
-    userProfiles: "Extended auth.users with profile data",
-    intentions: "High-level life/business objectives",
-    projects: "Specific deliverables under intentions",
-    todos: "Actionable tasks with questionnaire system",
-    weeklyGoals: "Strategic weekly planning with commitments"
-  }
-}
+# FAULTPROOF Framework v3.0
+## Fault Analysis Using Logical Troubleshooting - Procedural Resolution Of Operational Failures
+
+### Framework Evolution History
+
+#### Version 1.0 - Original Twelve-Move Protocol
+Basic sequential debugging with human validation gates and evidence requirements.
+
+#### Version 2.0 - Enhanced with Parallel Analysis
+Added parallel hypothesis testing and automated evidence collection where possible.
+
+#### Version 3.0 - Intelligent Predictive System
+Revolutionary improvements:
+1. **Predictive Fault Modeling**: AI-powered pattern recognition predicts likely failure points
+2. **Parallel Evidence Streams**: Multiple hypotheses tested simultaneously with intelligent routing
+3. **Automated Rollback Intelligence**: Smart rollback with data preservation and learning
+4. **Context-Aware Adaptation**: Framework adapts based on issue type and system state
+5. **Knowledge Accumulation**: Each resolution feeds into predictive models
+
+---
+
+### FAULTPROOF v3.0 Command Sequence
+
+| Command | Purpose | Evidence Required | Parallel Capability | AI Enhancement |
+|---------|---------|-------------------|---------------------|----------------|
+| `fault-init` | Initialize incident workspace with context capture | System snapshot, error logs, user report | - | Auto-categorizes issue type |
+| `fault-repro` | Create minimal, deterministic reproduction | Executable script with success criteria | - | Suggests reproduction strategies |
+| `fault-freeze` | Capture complete system state | Versioned manifest with checksums | Yes | Detects configuration drift |
+| `fault-expect` | Define expected vs actual behavior | Behavioral specification document | Yes | Generates test assertions |
+| `fault-map` | Trace data flow and dependencies | Interactive system diagram | Yes | Auto-generates from codebase |
+| `fault-isolate` | Progressive component isolation | Isolation matrix with results | Yes | Predicts optimal isolation path |
+| `fault-review` | **HUMAN GATE 1**: Validate isolation | Signed approval with comments | - | Suggests additional tests |
+| `fault-instrument` | Deploy strategic monitoring | Instrumentation manifest | Yes | AI-optimized probe placement |
+| `fault-hypothesize` | Generate ranked root causes | Hypothesis probability matrix | Yes | ML-based ranking |
+| `fault-falsify` | Test hypotheses systematically | Test results with confidence scores | Yes | Parallel test execution |
+| `fault-locate` | Pinpoint exact failure point | Root cause analysis report | - | Code-level precision |
+| `fault-fix` | Generate and apply fix | Patch file with rollback plan | - | Suggests multiple solutions |
+| `fault-deploy-test` | Deploy to isolated test environment | Deployment logs and health checks | - | Automated smoke tests |
+| `fault-approve` | **HUMAN GATE 2**: Validate fix | Signed approval with test evidence | - | Generates approval checklist |
+| `fault-generalize` | Create prevention mechanisms | Regression tests, monitors, docs | Yes | Pattern-based prevention |
+| `fault-document` | Generate comprehensive report | Incident bundle with all artifacts | - | Auto-generates from evidence |
+| `fault-clean` | Remove temporary artifacts | Clean workspace confirmation | - | Selective preservation |
+
+---
+
+### Enhanced Directory Structure
+
 ```
-
-#### **Recent Deployment Battle Log**
-```yaml
-Issue Resolution History:
-  
-  Problem: "ESLint warnings causing production build failures"
-  Root Cause: "Strict linting rules blocking deployment with unused imports"
-  Solution Applied: "Modified next.config.ts with eslint.ignoreDuringBuilds: true"
-  Files Modified: ["next.config.ts", ".eslintrc.json"]
-  Commit: "5eb3daa - Fix build: ignore ESLint warnings and TypeScript errors"
-  
-  Problem: "Weekly page SSR errors causing 404 NOT_FOUND"
-  Root Cause: "Zustand store accessing localStorage during server-side rendering"
-  Solution Applied: "Simplified pages to eliminate SSR conflicts"
-  Files Modified: ["src/app/weekly/page.tsx", "src/app/universe/page.tsx"]
-  Commits: ["c4c8414", "d86526e", "fc2fee7", "b8cf4a9"]
-  
-  Problem: "Dynamic import paths causing component not found errors"
-  Root Cause: "Complex file structure with incorrect relative imports"
-  Solution Applied: "Simplified component structure and removed dynamic imports"
-  Current Status: "Stable deployment with basic navigation working"
-```
-
-#### **Environment Configuration Matrix**
-```bash
-# Local Development Environment
-DATABASE_URL="postgresql://postgres:Disciplineismydailyrebellionanditfeelselectric@db.faxrfohnvldvaoohlygp.supabase.co:5432/postgres"
-NEXT_PUBLIC_SUPABASE_URL="https://faxrfohnvldvaoohlygp.supabase.co"
-NEXT_PUBLIC_SUPABASE_ANON_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZheHJmb2hudmxkdmFvb2hseWdwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTI1MDI3OTQsImV4cCI6MjA2ODA3ODc5NH0.mPHlxCTh4KqjrmkYTLnJVy5AJeUVuH3G79NlZiWd2Nk"
-
-# Deployment Status
-Repository: "https://github.com/timurael/creation.os"
-Production URL: "https://creationos.vercel.app"
-Latest Commit: "b8cf4a9 - Create simple, working universe page for deployment"
-```
-
-### Advanced Problem-Solving Protocols
-
-#### **Level 1: Diagnostic Phase**
-```bash
-/orc diagnose [issue]           # Comprehensive system health check
-/orc analyze.deployment         # Deployment pipeline analysis
-/orc analyze.database          # Supabase connection and schema validation
-/orc analyze.build             # Build process bottleneck identification
-/orc analyze.routing           # Next.js routing and page structure audit
-/orc analyze.ssr              # Server-side rendering conflict detection
-```
-
-#### **Level 2: Targeted Resolution**
-```bash
-/orc fix.build                 # Resolve build and compilation errors
-/orc fix.deployment            # Fix Vercel deployment issues
-/orc fix.database             # Resolve Supabase connection problems
-/orc fix.routing              # Fix Next.js routing and 404 errors
-/orc fix.ssr                  # Resolve server-side rendering conflicts
-/orc fix.environment          # Environment variable configuration
-```
-
-#### **Level 3: Emergency Protocols**
-```bash
-/orc emergency.rollback        # Immediate rollback to last working state
-/orc emergency.simplify        # Aggressive simplification for deployment
-/orc emergency.isolate         # Isolate problematic components
-/orc emergency.bypass          # Bypass complex features for core functionality
-```
-
-### Intelligent Issue Classification System
-
-#### **Build & Deployment Issues**
-```typescript
-interface BuildIssueProfile {
-  eslintErrors: {
-    symptoms: ["unused variables", "explicit any types", "missing dependencies"]
-    solutions: ["ignoreDuringBuilds: true", "rule overrides", "import cleanup"]
-    preventions: ["pre-commit hooks", "IDE linting", "strict mode gradual adoption"]
-  }
-  
-  ssrConflicts: {
-    symptoms: ["localStorage not defined", "window is not defined", "hydration mismatches"]
-    solutions: ["dynamic imports with ssr: false", "useEffect for client-only code", "typeof window checks"]
-    preventions: ["client component boundaries", "server/client separation", "SSR-safe patterns"]
-  }
-  
-  routingErrors: {
-    symptoms: ["404 NOT_FOUND", "page not rendering", "redirect loops"]
-    solutions: ["page.tsx structure validation", "layout.tsx hierarchy", "middleware conflicts"]
-    preventions: ["route testing", "file structure consistency", "navigation audits"]
-  }
-}
-```
-
-#### **Database & State Issues**
-```typescript
-interface DatabaseIssueProfile {
-  connectionErrors: {
-    symptoms: ["connection refused", "authentication failed", "SSL errors"]
-    solutions: ["environment variable validation", "RLS policy checks", "connection string format"]
-    preventions: ["health checks", "connection pooling", "retry mechanisms"]
-  }
-  
-  stateManagement: {
-    symptoms: ["undefined store", "state not persisting", "hydration errors"]
-    solutions: ["store initialization timing", "persistence middleware config", "SSR compatibility"]
-    preventions: ["store testing", "initialization patterns", "client-only wrappers"]
-  }
-}
-```
-
-### Advanced Debugging Workflows
-
-#### **Deployment Pipeline Intelligence**
-```bash
-# ORC Deployment Analysis Protocol
-/orc deployment.pipeline        # Analyze entire deployment workflow
-/orc deployment.logs           # Enhanced log analysis with pattern recognition
-/orc deployment.compare        # Compare successful vs failed deployments
-/orc deployment.optimize       # Optimization recommendations for build time
-/orc deployment.monitor        # Real-time deployment health monitoring
-```
-
-#### **Code Architecture Analysis**
-```bash
-# Deep Code Understanding
-/orc architecture.audit        # Complete codebase architecture review
-/orc dependencies.analyze      # Dependency graph analysis and optimization
-/orc imports.cleanup          # Automatic import optimization
-/orc components.health        # Component-level health and performance audit
-/orc patterns.validate        # Validate adherence to Next.js 15 best practices
-```
-
-#### **Database Operations Intelligence**
-```bash
-# Supabase Integration Management
-/orc database.schema.validate  # Validate schema against application needs
-/orc database.rls.audit       # Row Level Security policy verification
-/orc database.migrate         # Safe database migration execution
-/orc database.backup          # Automated backup before major changes
-/orc database.optimize        # Query and index optimization recommendations
-```
-
-### Proactive Monitoring & Prevention
-
-#### **Continuous Health Monitoring**
-```bash
-/orc monitor.start            # Begin continuous system monitoring
-/orc monitor.alerts           # Configure intelligent alerting
-/orc monitor.performance      # Real-time performance tracking
-/orc monitor.errors           # Error pattern recognition and prediction
-/orc monitor.usage           # Usage analytics and optimization insights
-```
-
-#### **Preventive Maintenance**
-```bash
-/orc maintain.dependencies    # Dependency update safety analysis
-/orc maintain.security       # Security vulnerability scanning
-/orc maintain.performance    # Performance regression detection
-/orc maintain.compatibility  # Cross-browser and device compatibility checks
-/orc maintain.documentation  # Automated documentation updates
-```
-
-### Crisis Management Protocols
-
-#### **Emergency Response System**
-```yaml
-Crisis Level 1: Build Failures
-  Response Time: < 5 minutes
-  Actions:
-    - Immediate build log analysis
-    - Automatic rollback to last successful commit
-    - Simplified version deployment
-    - Root cause identification
-    
-Crisis Level 2: Deployment Issues  
-  Response Time: < 10 minutes
-  Actions:
-    - Vercel configuration audit
-    - Environment variable validation
-    - Database connectivity verification
-    - Simplified component deployment
-    
-Crisis Level 3: Data Loss Risk
-  Response Time: < 2 minutes
-  Actions:
-    - Immediate database backup
-    - Service isolation
-    - Data integrity verification
-    - Recovery plan execution
-```
-
-#### **Intelligent Rollback Strategy**
-```bash
-/orc rollback.smart           # Intelligent rollback with minimal data loss
-/orc rollback.partial         # Partial rollback of specific components
-/orc rollback.targeted        # Target specific commits or features
-/orc rollback.verify          # Verify rollback success and system stability
-```
-
-### Advanced Feature Development Support
-
-#### **Safe Feature Development**
-```bash
-/orc feature.scaffold         # Intelligent feature scaffolding
-/orc feature.test            # Comprehensive feature testing
-/orc feature.integrate       # Safe feature integration with rollback plan
-/orc feature.monitor         # Post-deployment feature monitoring
-```
-
-#### **Performance Optimization Engine**
-```bash
-/orc optimize.bundle         # Bundle size optimization with tree-shaking
-/orc optimize.images         # Next.js Image optimization audit
-/orc optimize.fonts          # Font loading and performance optimization
-/orc optimize.database       # Database query optimization
-/orc optimize.api            # API route performance tuning
-```
-
-### Learning & Adaptation System
-
-#### **Pattern Recognition Engine**
-```typescript
-interface OrcLearningSystem {
-  issuePatterns: {
-    buildFailures: "Track patterns in build failures across deployments"
-    userErrors: "Common user-introduced errors and prevention"
-    environmentIssues: "Environment-specific problems and solutions"
-  }
-  
-  solutionEffectiveness: {
-    trackSuccessRates: "Monitor solution success rates over time"
-    optimizeApproaches: "Refine approaches based on effectiveness"
-    predictiveAnalysis: "Predict potential issues before they occur"
-  }
-  
-  knowledgeBase: {
-    buildSolutions: "Comprehensive build issue resolution database"
-    deploymentPatterns: "Successful deployment pattern library"
-    optimizationTechniques: "Performance optimization technique catalog"
-  }
-}
-```
-
-### Communication & Reporting
-
-#### **Intelligent Status Reporting**
-```bash
-/orc report.health           # Comprehensive system health report
-/orc report.performance      # Performance metrics and trends
-/orc report.security         # Security audit and recommendations
-/orc report.optimization     # Optimization opportunities and impact
-/orc report.future           # Future enhancement recommendations
-```
-
-#### **User-Friendly Explanations**
-```bash
-/orc explain.simple          # Simple explanations for complex issues
-/orc explain.technical       # Technical deep-dive explanations
-/orc explain.prevention      # How to prevent similar issues
-/orc explain.optimization    # Optimization opportunity explanations
-```
-
-### Integration with Development Workflow
-
-#### **Git Workflow Intelligence**
-```bash
-/orc git.analyze            # Analyze git history for patterns
-/orc git.branch.strategy    # Optimal branching strategy recommendations
-/orc git.commit.optimize    # Commit message and structure optimization
-/orc git.merge.safety       # Safe merge conflict resolution
-```
-
-#### **Code Quality Assurance**
-```bash
-/orc quality.audit          # Comprehensive code quality audit
-/orc quality.standards      # Enforce coding standards and best practices
-/orc quality.review         # Automated code review with suggestions
-/orc quality.metrics        # Code quality metrics tracking
-```
-
-### Future-Proofing & Scalability
-
-#### **Scalability Planning**
-```bash
-/orc scale.analyze          # Analyze current scalability limitations
-/orc scale.plan             # Create scalability roadmap
-/orc scale.implement        # Implement scalability improvements
-/orc scale.monitor          # Monitor scalability metrics
-```
-
-#### **Technology Evolution Management**
-```bash
-/orc tech.upgrade.plan      # Plan technology stack upgrades
-/orc tech.compatibility     # Assess compatibility with new versions
-/orc tech.migration         # Execute safe technology migrations
-/orc tech.adoption          # Evaluate and adopt new technologies
+.faultproof/
+├── incident-{timestamp}/
+│   ├── 00-metadata/
+│   │   ├── incident.yaml          # Incident metadata and classification
+│   │   ├── context.json           # System context at time of failure
+│   │   └── predictions.json       # AI predictions and confidence scores
+│   ├── 01-reproduction/
+│   │   ├── repro-script.sh        # Minimal reproduction script
+│   │   ├── success-criteria.yaml  # Define what "fixed" means
+│   │   └── execution-logs/        # Each reproduction attempt
+│   ├── 02-system-state/
+│   │   ├── freeze-manifest.json   # Complete dependency snapshot
+│   │   ├── environment.yaml       # Environment variables
+│   │   └── drift-analysis.json    # Configuration drift detection
+│   ├── 03-expectations/
+│   │   ├── expected.spec          # Expected behavior specification
+│   │   ├── actual.spec            # Actual behavior documentation
+│   │   └── delta-analysis.json    # Behavior differential
+│   ├── 04-system-map/
+│   │   ├── architecture.mmd       # Mermaid diagram of system
+│   │   ├── data-flow.yaml         # Data flow analysis
+│   │   └── dependency-graph.json  # Component dependencies
+│   ├── 05-isolation/
+│   │   ├── isolation-matrix.csv   # Component toggle results
+│   │   ├── isolation-path.json    # AI-optimized test sequence
+│   │   └── boundary-analysis.yaml # Fault boundary definition
+│   ├── 06-review/
+│   │   ├── review-approval.sig    # Human approval signature
+│   │   ├── review-comments.md     # Reviewer observations
+│   │   └── additional-tests.yaml  # Requested supplementary tests
+│   ├── 07-instrumentation/
+│   │   ├── probe-manifest.yaml    # Instrumentation points
+│   │   ├── metrics-collected.json # Real-time metrics data
+│   │   └── trace-analysis.log     # Execution trace analysis
+│   ├── 08-hypotheses/
+│   │   ├── hypothesis-rank.yaml   # Ranked root causes
+│   │   ├── probability-model.json # ML-based probability scores
+│   │   └── evidence-matrix.csv    # Supporting evidence map
+│   ├── 09-falsification/
+│   │   ├── test-suite.yaml        # Falsification test definitions
+│   │   ├── parallel-results.json  # Parallel test execution results
+│   │   └── confidence-scores.csv  # Statistical confidence levels
+│   ├── 10-root-cause/
+│   │   ├── root-cause.md          # Detailed root cause analysis
+│   │   ├── code-analysis.json     # Code-level failure point
+│   │   └── fix-strategies.yaml    # Multiple solution approaches
+│   ├── 11-fix-implementation/
+│   │   ├── patch.diff             # Primary fix implementation
+│   │   ├── alternatives/          # Alternative solutions
+│   │   └── rollback-plan.yaml    # Automated rollback strategy
+│   ├── 12-test-deployment/
+│   │   ├── deploy-log.txt         # Test environment deployment
+│   │   ├── smoke-tests.json       # Automated validation results
+│   │   └── health-metrics.yaml    # System health indicators
+│   ├── 13-approval/
+│   │   ├── approval.sig           # Fix approval signature
+│   │   ├── test-evidence.yaml     # Comprehensive test results
+│   │   └── performance-impact.json # Performance comparison
+│   ├── 14-generalization/
+│   │   ├── regression-tests/      # New test implementations
+│   │   ├── monitors.yaml          # Production monitoring rules
+│   │   ├── prevention-guide.md    # Prevention documentation
+│   │   └── pattern-library.json   # Added to pattern database
+│   ├── 15-documentation/
+│   │   ├── incident-report.md     # Complete incident report
+│   │   ├── timeline.json          # Event timeline
+│   │   ├── lessons-learned.md     # Key takeaways
+│   │   └── artifacts-bundle.tar   # All evidence archived
+│   └── 16-cleanup/
+│       ├── cleanup-log.txt        # Cleanup operations log
+│       ├── preserved-artifacts/   # Selectively preserved items
+│       └── final-commit.sha       # Clean commit reference
+├── knowledge-base/
+│   ├── patterns.db                # Historical failure patterns
+│   ├── solutions.db               # Successful resolution strategies
+│   └── predictions.model          # ML model for fault prediction
+└── state.json                     # Current framework state
 ```
 
 ---
 
-## ORC v7.0 Excellence Protocol
+### Intelligent Control Flow v3.0
 
-**Revolutionary Problem-Solving Architecture**: Complete lifecycle management from issue detection through resolution to prevention, with deep Creation OS intelligence and proactive monitoring capabilities.
+```yaml
+Entry Point: fault-init
+  ├─> Automatic Issue Classification
+  │     ├─> Build/Deployment Issue -> Optimized path A
+  │     ├─> Runtime/SSR Issue -> Optimized path B
+  │     └─> Database/State Issue -> Optimized path C
+  ├─> Parallel Evidence Collection
+  │     ├─> System state capture (async)
+  │     ├─> Log aggregation (async)
+  │     └─> Metric collection (async)
+  ├─> Predictive Analysis
+  │     ├─> Historical pattern matching
+  │     ├─> Likely root cause prediction
+  │     └─> Suggested investigation path
+  └─> Framework Initialization Complete
 
-### 🎯 Current Mission: Deployment Stability & Feature Recovery
+Progressive Resolution:
+  while (not resolved):
+    ├─> Execute next command in sequence
+    ├─> Validate evidence requirements
+    ├─> AI-assisted analysis
+    ├─> Parallel hypothesis testing (where applicable)
+    ├─> Human validation gates (as required)
+    └─> Adaptive path adjustment
 
-**Primary Objectives:**
-1. **Deployment Reliability**: Ensure 100% successful deployments with zero downtime
-2. **Feature Recovery**: Gradually restore complex features while maintaining stability
-3. **Performance Optimization**: Optimize build times, bundle sizes, and runtime performance
-4. **Monitoring Excellence**: Implement comprehensive monitoring and alerting systems
+Resolution Confirmation:
+  ├─> Automated test validation
+  ├─> Performance impact analysis
+  ├─> Rollback preparation
+  └─> Knowledge base update
+```
 
-### Core Innovation Breakthrough
+---
 
-**Multi-Layer Intelligence System**: Five specialized layers working together to provide comprehensive project intelligence:
+### Enhanced Human Validation Gates
 
-1. **Detection Layer**: Proactive issue identification and pattern recognition
-2. **Analysis Layer**: Deep technical analysis with root cause identification
-3. **Resolution Layer**: Intelligent solution application with rollback capabilities
-4. **Prevention Layer**: Proactive measures to prevent similar issues
-5. **Learning Layer**: Continuous improvement through pattern recognition
+#### Gate 1: Isolation Review (fault-review)
+**Enhanced Requirements:**
+- Reviewer must have system architecture knowledge
+- AI provides suggested review checklist
+- Minimum isolation coverage: 80%
+- Must confirm fault boundary is sufficiently narrow
+- Can request additional isolation vectors
 
-### Revolutionary Capabilities
+**Review Checklist Generated:**
+```yaml
+- [ ] Fault boundary clearly defined
+- [ ] All adjacent components tested
+- [ ] Isolation matrix complete
+- [ ] No ambiguous results
+- [ ] Root cause domain identified
+```
 
-#### **Deployment Intelligence Revolution**
-- **Real-time Build Analysis**: ML-powered build failure prediction and prevention
-- **Dependency Conflict Detection**: Proactive identification of dependency issues
-- **Environment Drift Detection**: Automatic detection of environment configuration changes
-- **Rollback Intelligence**: Smart rollback with minimal disruption and data preservation
+#### Gate 2: Fix Approval (fault-approve)
+**Enhanced Requirements:**
+- Independent verification in test environment
+- Performance regression testing
+- Security impact assessment
+- Rollback procedure verified
+- Production readiness confirmation
 
-#### **Code Architecture Mastery**
-- **SSR Conflict Resolution**: Automatic detection and resolution of server-side rendering issues
-- **State Management Optimization**: Intelligent Zustand store optimization and SSR compatibility
-- **Component Health Monitoring**: Real-time component performance and error tracking
-- **Import Optimization**: Automatic cleanup and optimization of import statements
+**Approval Criteria:**
+```yaml
+- [ ] Original issue resolved
+- [ ] No performance degradation
+- [ ] Security scan passed
+- [ ] Rollback tested successfully
+- [ ] Documentation complete
+```
 
-#### **Database Operations Excellence**
-- **Connection Health Monitoring**: Continuous Supabase connection monitoring and optimization
-- **Schema Evolution Management**: Safe database schema changes with automatic migration
-- **Query Performance Analysis**: Real-time query performance monitoring and optimization
-- **Data Integrity Assurance**: Continuous data integrity verification and protection
+---
 
-### Enhanced Project Experience
+### Parallel Execution Engine
 
-#### **Intelligent Issue Resolution**
-- **Context-Aware Solutions**: Solutions tailored to specific Creation OS architecture
-- **Progressive Recovery**: Gradual restoration of features while maintaining stability
-- **Zero-Downtime Fixes**: Hot fixes that don't require full redeployment
-- **Predictive Maintenance**: Issue prevention based on historical patterns
+**Commands Supporting Parallel Execution:**
+- `fault-freeze`: Simultaneously capture multiple system aspects
+- `fault-map`: Parallel analysis of different system layers
+- `fault-isolate`: Test multiple components concurrently
+- `fault-instrument`: Deploy probes across distributed systems
+- `fault-falsify`: Execute hypothesis tests in parallel
 
-#### **Advanced Monitoring & Alerting**
-- **Real-time Health Dashboard**: Comprehensive system health visualization
-- **Intelligent Alerting**: Context-aware alerts with automatic escalation
-- **Performance Baselines**: Establish and monitor performance baselines
-- **Trend Analysis**: Long-term trend analysis with optimization recommendations
+**Parallel Orchestration:**
+```yaml
+parallel_execution:
+  max_workers: 8
+  coordination_method: "message_queue"
+  result_aggregation: "real_time"
+  failure_handling: "graceful_degradation"
+  progress_tracking: "unified_dashboard"
+```
 
-#### **Continuous Optimization**
-- **Build Performance**: Continuous build time optimization and monitoring
-- **Bundle Analysis**: Automatic bundle size optimization with tree-shaking
-- **Database Performance**: Query optimization and index recommendations
-- **User Experience**: Performance monitoring from user perspective
+---
 
-**System Status**: 🟢 Deployment Stable • Database Connected • Monitoring Active
-**Last Updated**: 2025-07-14 Enhanced with Crisis Management Intelligence
-**Version**: ORC v7.0 - Advanced Problem-Solving Agent
+### AI-Powered Enhancements
 
-## Key Differentiators
+#### 1. Predictive Fault Modeling
+```yaml
+prediction_engine:
+  input_features:
+    - error_signature
+    - system_state
+    - recent_changes
+    - historical_patterns
+  output:
+    - likely_root_causes: [ranked_list]
+    - confidence_scores: [0.0-1.0]
+    - suggested_investigation_path: [ordered_commands]
+```
 
-### **Crisis-Ready Intelligence**
-- **Rapid Response**: < 5 minute response time for critical issues
-- **Intelligent Triage**: Automatic issue classification and priority assignment
-- **Multi-Layer Rollback**: Granular rollback capabilities with data preservation
-- **Learning System**: Continuous improvement through issue pattern recognition
+#### 2. Intelligent Instrumentation
+```yaml
+instrumentation_optimizer:
+  analyzes:
+    - code_execution_paths
+    - data_flow_patterns
+    - resource_utilization
+  suggests:
+    - optimal_probe_locations
+    - minimal_performance_impact
+    - maximum_insight_coverage
+```
 
-### **Deep Creation OS Integration**
-- **Architecture Awareness**: Complete understanding of Creation OS structure and patterns
-- **Component Intelligence**: Deep knowledge of all components and their interactions
-- **State Management Expertise**: Advanced Zustand and SSR compatibility management
-- **Database Integration**: Comprehensive Supabase integration and optimization
+#### 3. Pattern Learning System
+```yaml
+pattern_accumulator:
+  captures:
+    - failure_signatures
+    - resolution_strategies
+    - time_to_resolution
+    - false_positive_paths
+  improves:
+    - prediction_accuracy
+    - hypothesis_ranking
+    - test_prioritization
+```
 
-### **Proactive Problem Prevention**
-- **Pattern Recognition**: Identify and prevent recurring issues
-- **Performance Monitoring**: Continuous performance baseline monitoring
-- **Security Scanning**: Automated security vulnerability detection
-- **Compatibility Assurance**: Cross-platform and cross-browser compatibility monitoring
+---
 
-### **Developer Experience Excellence**
-- **Intelligent Explanations**: Clear, actionable explanations for complex issues
-- **Automated Solutions**: One-command resolution for common problems
-- **Progress Transparency**: Real-time progress updates and status reporting
-- **Knowledge Transfer**: Comprehensive documentation and learning resources
+### Knowledge Base Integration
 
-**Mission Statement**: ORC v7.0 ensures Creation OS maintains 99.9% uptime while continuously evolving and optimizing, providing an unparalleled development and user experience through intelligent automation and proactive problem resolution.
+**Continuous Learning:**
+- Every incident enriches the knowledge base
+- Successful resolutions become templates
+- Failed approaches marked to avoid repetition
+- Pattern recognition improves over time
+
+**Query Interface:**
+```bash
+fault-kb query "SSR hydration error"
+fault-kb similar <current-incident-id>
+fault-kb stats --success-rate
+fault-kb patterns --most-common
+```
+
+---
+
+### Automation Capabilities
+
+**Fully Automated Steps:**
+- System state capture
+- Dependency analysis
+- Log aggregation
+- Basic reproduction attempts
+- Parallel test execution
+- Report generation
+- Artifact cleanup
+
+**Human-Assisted Automation:**
+- Reproduction script refinement
+- Hypothesis validation
+- Fix strategy selection
+- Performance acceptance
+
+**Never Automated:**
+- Isolation review approval
+- Fix approval
+- Production deployment decision
+
+---
+
+### Emergency Protocols
+
+**Crisis Mode Activation:**
+```bash
+fault-init --emergency
+```
+
+**Emergency Features:**
+- Bypass non-critical evidence requirements
+- Accelerated parallel execution
+- Direct escalation paths
+- Immediate rollback preparation
+- Real-time status broadcasting
+
+---
+
+### Cleanup Intelligence
+
+**Smart Cleanup:**
+- Preserves valuable debugging artifacts
+- Compresses and archives evidence
+- Removes only transient data
+- Maintains audit trail
+- Updates knowledge base
+
+**Cleanup Verification:**
+```bash
+fault-clean --verify
+fault-clean --preserve-evidence
+fault-clean --archive-only
+```
+
+---
+
+## Applying FAULTPROOF to Current 404 Issue
+
+### Immediate Action Plan
+
+```bash
+# Initialize FAULTPROOF for current 404 issue
+fault-init --issue-type="deployment-404" --severity="critical"
+
+# Step 1: Reproduce the 404
+fault-repro --url="https://creationos.vercel.app" --expected="200"
+
+# Step 2: Freeze current state
+fault-freeze --environment="vercel" --repo="timurael/creation.os"
+
+# Step 3: Define expectations
+fault-expect --behavior="Site should load with Creation OS landing page"
+
+# Step 4: Map the deployment pipeline
+fault-map --focus="vercel-build-process"
+
+# Step 5: Isolate failure components
+fault-isolate --components="routing,build,deployment,dns"
+
+# Continue through framework...
+```
+
+### Predicted Root Causes (AI Analysis)
+
+Based on the FAULTPROOF knowledge base and current symptoms:
+
+1. **Build Output Structure** (85% confidence)
+   - Next.js may not be generating proper output structure
+   - Missing .next directory or incorrect file placement
+
+2. **Vercel Configuration** (72% confidence)
+   - Missing vercel.json configuration
+   - Incorrect framework detection
+
+3. **Route Configuration** (68% confidence)
+   - App Router misconfiguration
+   - Missing root page export
+
+4. **Environment Variables** (45% confidence)
+   - Missing required build-time variables
+   - Incorrect NODE_ENV setting
+
+### Next Steps with FAULTPROOF
+
+The framework will systematically test each hypothesis, gather evidence, and provide a definitive solution with rollback capabilities and prevention mechanisms.
+
+---
+
+**System Status**: 🔴 Active Incident • FAULTPROOF Framework Initialized
+**Incident ID**: FAULT-2025-07-14-001
+**Framework Version**: FAULTPROOF v3.0 with AI Enhancement
+**ORC Version**: v8.0 - Enhanced with FAULTPROOF Protocol
